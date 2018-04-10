@@ -19,8 +19,8 @@ pipeline {
             }
             post {
                 success {
-                    archiveArtifacts artifacts: 'complete/target/*.jar', fingerprint: true
-                    junit 'complete/target/surefire-reports/*.xml' 
+                    archiveArtifacts artifacts: 'complete/target/**/*.jar', fingerprint: true
+                    junit 'complete/target/surefire-reports/**/*.xml' 
                 }
             }
         }
