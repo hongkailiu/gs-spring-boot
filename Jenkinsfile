@@ -17,6 +17,11 @@ pipeline {
             steps { 
                sh 'mvn -Dmaven.test.failure.ignore=true -f complete/pom.xml install'
             }
+            post {
+                success {
+                    junit 'target/surefire-reports/**/*.xml' 
+                }
+            }
         }
     }
 }
